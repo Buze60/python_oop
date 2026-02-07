@@ -6,7 +6,9 @@ class EmployeeDatabase:
         self.id = id
         self.__salary = salary
         self.employees = []
-        
+    @property
+    def get_salary(self):
+        return f"the salary of the user with id: {self.id}  is {self.__salary}"
     def get_employee_data(self,ID):
         if not isinstance(ID,str):
             raise ValueError("ID must be a string")
@@ -36,3 +38,4 @@ class EmployeeDatabase:
 employee = EmployeeDatabase("Buze",27,"SOFTWARE","buz123",400000)
 
 print(employee.get_employee_data("buz123"))
+print(employee.get_salary)
