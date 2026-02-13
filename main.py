@@ -1,20 +1,16 @@
-print("==========================Inheritance==========================")
 class Animal:
     def __init__(self, name):
         self.name = name
 
     def sound(self):
-        return f'{self.name} makes a sound'
+        return f'{self.name} makes a sound woof!'
+    
 
 class Dog(Animal):
-    bark = 'woof! woof!! woof!!!'
-class Cat(Animal):
-    meow = 'meow! meow!! meow!!!'
+    
+    def sound(self):
+        base = super().sound()
+        return f"{base} and {self.name} is eating meet"
 
-jack = Dog('Jack')
-Tom = Cat('Tom')
-print(jack.sound())  # Jack makes a sound
-print(jack.bark)  # woof! woof!! woof!!!
-
-print(Tom.sound())  # Tom makes a sound
-print(Tom.meow)
+animal1 = Dog("Jack")
+print(animal1.sound())
