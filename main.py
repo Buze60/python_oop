@@ -1,39 +1,18 @@
-print("================================Multiple Inheritance================================")
-class Parent:
-    
-    pre_conditions = {
-        "religious": "Orthodox christian",
-        "Nationality":"Ethiopian",
-        "Family Members":"Simachew Dubale's Family meember"
-    }
-    def __init__(self,name):
-        self.name = name
-        
+class Cat:
+   def speak(self):
+       return "A cat meow"
 
-    def displayPreconditions(self):
-        for key,value in self.pre_conditions.items():
-            familyMeneber = input(f"Is the child {key}: {value}? (yes/no) ").lower()
-            if familyMeneber.lower() == "no":
-                print(f"The child is not {value} {key}")
-            
-            if familyMeneber.lower() == "yes":
-                print(f"the child is {value}")
-                
-        
-        
-class Wealth(Parent):
-    pass
-    
-class childTwo(Parent,Warning):
-    pass
+class Bird:
+   def speak(self):
+       return "A bird tweet"
+  
+class Monkey:
+   def speak(self):
+       return "A monkey ooh ooh aah aah ooh ooh aah aah"
 
+def animal_sound(animal):
+   print(animal.speak())
 
-
-child = childTwo("Ali")
-print(child.displayPreconditions())
-   
-   
-
-    
-
-
+animal_sound(Cat())
+animal_sound(Bird())
+animal_sound(Monkey())
