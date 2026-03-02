@@ -1,19 +1,15 @@
-class Animal:
-    def speak(self):
-        return "I am an animal"
-class Cat(Animal):
-    def speak(self):
-        return "Meow!"
-class Dog(Animal):
-    def speak(self):
-        return "Woof! woof!!"
-class Cow(Animal):
-    def speak(self):
-        return "Moo! Moo!! moo!!!"
-    
-def sound(animal):
-    return animal.speak()
-    
-print(sound(Cat()))
-print(sound(Dog()))
-print(sound(Cow()))
+class Movie:
+    def __init__(self, title, year, director, duration):
+        self.title = title
+        self.year = year
+        self.director = director
+        self.duration = duration
+
+    def __str__(self):
+        return f'{self.title} ({self.year}) - {self.duration} min, {self.director}'
+
+
+movie1 = Movie('የወንዶች ጉዳይ 1', 2023, 'ዳኔኢል ሞላ', 120)
+movie2 = Movie('የወንዶች ጉዳይ 2', 2024, 'አንድ ሰብ አስተዋፅኦ', 130)
+print(movie1)
+print(movie2)
